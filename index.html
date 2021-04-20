@@ -3,7 +3,86 @@
 <html>
   <head>
     <meta charset="utf-8">
-    
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+       crossorigin=""/>
+      
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+       crossorigin=""></script>
+      
+    <style type="text/css">
+    #map {
+      width: 1000px;
+      height: 750px;
+      }
+    </style>
     <title>Hello World</title>
    </head>
+
+    
+    <body>
+        <h2> Environmental Humanities Assignment </h2>
+        <h3> <p style="font-family:Verdana"> Hover on the icons to see the pictures! </p></h3>
+        
+        <div id="map"></div>
+        
+        <script type="text/javascript">
+            var mymap = L.map('map').setView([1.340416, 103.962674], 18);
+            
+            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox/streets-v11',
+                tileSize: 512,
+                zoomOffset: -1,
+                accessToken: 'pk.eyJ1IjoiemhlbmhhbzE4ODYiLCJhIjoiY2tucGxmOWExMDNlczJvcXBncXhzODl3MSJ9.aTnkhyJ8Mn0b7q6PXjburA'
+            }).addTo(mymap);
+
+            var lineLatLng = [
+                [1.3409561981213765, 103.96298463956366],
+                [1.340883798314669, 103.96316166535917],
+                [1.3414603152610864, 103.96358813659057],
+                [1.3421950389979087, 103.96420772687377],
+                [1.3423881050527369, 103.96406020537914],
+                [1.3424232522718076, 103.96408190888671],
+                [1.3422047122278238, 103.96426027578475],
+                [1.3419714240626308, 103.96404301685577],
+                [1.342211415910406, 103.96371444625325],
+                [1.3426042516809784, 103.96377077264209],
+                [1.3426498367154758, 103.96381368798534],
+                [1.342204712232124, 103.96376809043234],
+                [1.3417126668384471, 103.964512902283],
+                [1.3414622801302138, 103.96422880352904],
+                [1.341143256159631, 103.96461567434008],
+                [1.3405632905698834, 103.96459530232218],
+                [1.340171795210126, 103.96522428033488],
+                [1.340139617506748, 103.96516527173688],
+                [1.3401784988982677, 103.96497483489789],
+                [1.339970684553241, 103.96482329008909]
+                
+            ]
+            
+            var start = [1.3409561981213765, 103.96298463956366]
+            var finish = [1.339970684553241, 103.96482329008909]
+            var garden = [1.3423881050527369, 103.96406020537914]
+            var chinese_house = [1.3426498367154758, 103.96381368798534]
+            
+            L.polyline(lineLatLng, {color: 'blue'}).addTo(mymap)
+            start = L.marker(start).addTo(mymap)
+            finish = L.marker(finish).addTo(mymap)
+            garden = L.marker(garden, {color: 'red'}).addTo(mymap)
+            chinese_house = L.marker(chinese_house, {color: 'red'}).addTo(mymap)
+            
+            start.bindTooltip('<p>Start: Canteen!</p>')
+            
+            finish.bindTooltip('<p>End: Entrepreneurship Center! </br> <img src = pictures/DSC02932.JPG width = 200></img></p>')
+            
+            
+            
+        </script>
+        
+    
+    
+    </body>
 </html>
