@@ -1,0 +1,15 @@
+table, th, td {
+    border: 1px solid black;
+    margin: inherit;
+}
+
+
+body {
+    background: #FFFFFF;
+    font-family: "Raleway", sans-serif;
+
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+}
