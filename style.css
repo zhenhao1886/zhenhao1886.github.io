@@ -7,9 +7,17 @@ table, th, td {
 body {
     background: #FFFFFF;
     font-family: "Raleway", sans-serif;
+    padding-top: 40px;
+    padding-right: 80px;
+    padding-left: 80px;
+    padding-bottom: 40px;
 
 }
 
 p {
     font-family: "Open Sans", sans-serif;
+}
+
+.year {
+    float: right;
 }
